@@ -1,0 +1,20 @@
+﻿@model Web_Java_Project.Models.Project
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id = "leftdiv">
+    <ul id="navlist">
+        <li><a href="@Url.Action("General", "Project",new { id = Model.ProjectID })">@WJP_Resources.Lang.ProjectGeneral</a></li>
+        <li><a href="@Url.Action("Source", "Project",new { id = Model.ProjectID })">@WJP_Resources.Lang.ProjectSource</a></li>
+        <li><a href="@Url.Action("Library", "Project",new { id = Model.ProjectID })">@WJP_Resources.Lang.ProjectLibrary</a></li>
+        <li><a href="@Url.Action("Data", "Project",new { id = Model.ProjectID })">@WJP_Resources.Lang.ProjectData</a></li>
+        <li><a href="@Url.Action("Compile", "Project",new { id = Model.ProjectID })">@WJP_Resources.Lang.ProjectCompile</a></li>
+        <li><a href="@Url.Content("~/Profile/Projects")">@WJP_Resources.Lang.ProjectExit</a></li>
+    </ul>        
+</div> 
+
+<div id = "infodiv">
+    @RenderBody()
+</div>

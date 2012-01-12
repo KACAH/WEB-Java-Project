@@ -1,0 +1,43 @@
+﻿@model Web_Java_Project.Models.Project
+
+@{
+    ViewBag.Title = "CompileResult";
+    Layout = "~/Views/Shared/_ProjectLayout.cshtml";
+}
+
+<h2>@WJP_Resources.Lang.CompileResult</h2>
+<br />
+
+<textarea id="comres" name="comres" rows = "" cols = "" readonly="readonly" style="border-style: solid; width: 700px; height: 300px">
+@ViewBag.message
+</textarea> 
+
+@if (ViewBag.Succseed)
+{
+    <div>
+        @Html.ActionLink(WJP_Resources.Lang.CompileDownload, "Download", new { ID = Model.ProjectID, fileName = "/" + Model.Name + ".zip" })
+    </div>
+    
+    using (Html.BeginForm("SendMail", "Project", new { ID = @Model.ProjectID }))
+    {
+        <fieldset>
+            <legend>@WJP_Resources.Lang.CompileEmail</legend>
+
+            <div class="editor-label">
+                @WJP_Resources.Lang.RegEmail
+            </div>
+            <div class="editor-field">
+                <input type="text" name="email" size="100" value="@ViewBag.DefEmail" />
+            </div>
+
+            <p>
+                <input type="submit" value="Send" />
+            </p>
+        </fieldset>
+    }
+} else
+{
+    <div>
+        @WJP_Resources.Lang.CompileErrors
+    </div>
+}

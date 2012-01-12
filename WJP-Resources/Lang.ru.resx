@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountInfo" xml:space="preserve">
+    <value>Аккаунт</value>
+  </data>
+  <data name="ChangePassCompFail" xml:space="preserve">
+    <value>Пароль и повторенный пароль не совпадают</value>
+  </data>
+  <data name="ChangePassConf" xml:space="preserve">
+    <value>Подтвердите пароль</value>
+  </data>
+  <data name="ChangePassCurr" xml:space="preserve">
+    <value>Текущий пароль</value>
+  </data>
+  <data name="ChangePassLength" xml:space="preserve">
+    <value>Пароль должен быть минимум 7 символов</value>
+  </data>
+  <data name="ChangePassNewPass" xml:space="preserve">
+    <value>Новый пароль</value>
+  </data>
+  <data name="ChangePassReq" xml:space="preserve">
+    <value>Минимальная длина нового пароля:</value>
+  </data>
+  <data name="ChangePassSuc" xml:space="preserve">
+    <value>Пароль был успешно изменен.</value>
+  </data>
+  <data name="ChangePassUnsuc" xml:space="preserve">
+    <value>Во время смены пароля произошла ошибка.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Изменить пароль</value>
+  </data>
+  <data name="ChangePasswordFail" xml:space="preserve">
+    <value>Текущий или новый пароль введен неверною</value>
+  </data>
+  <data name="DuplicateEmail" xml:space="preserve">
+    <value>Пользователь с таким email уже существует. Пожалуйста введите другой адрес.</value>
+  </data>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>Пользователь с таким именем уже существует. Пожалуйста введите другоe имя пользователя.</value>
+  </data>
+  <data name="IncorrectLoginOrPass" xml:space="preserve">
+    <value>Неверный логин или пароль, или ваш аккаунт заблокирован администратором.</value>
+  </data>
+  <data name="InvalidAnswer" xml:space="preserve">
+    <value>Ответ для восстановления пароля неверный. Прожалуйста проверьте его и попробуйте еще раз.</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Введенный email неверный. Прожалуйста проверьте его и попробуйте еще раз.</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Введенный пароль неверный. Прожалуйста проверьте его и попробуйте еще раз.</value>
+  </data>
+  <data name="InvalidQuestion" xml:space="preserve">
+    <value>Вопрос для восстановления пароля неверный. Прожалуйста проверьте его и попробуйте еще раз.</value>
+  </data>
+  <data name="InvalidUserName" xml:space="preserve">
+    <value>Имя пользователя неверно. Прожалуйста проверьте его и попробуйте еще раз.</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="LogOnError" xml:space="preserve">
+    <value>Ошибка при попытке входа в систему</value>
+  </data>
+  <data name="LogOnName" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="LogOnPass" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="LogOnRemember" xml:space="preserve">
+    <value>Запомнить?</value>
+  </data>
+  <data name="PleaseLogOn" xml:space="preserve">
+    <value>Пожалуйста введите ваше имя пользователя и пароль.</value>
+  </data>
+  <data name="ProviderError" xml:space="preserve">
+    <value>Ошибка при создании аккаунта. Обратитесь к администратору для решения проблемы.</value>
+  </data>
+  <data name="RegEmail" xml:space="preserve">
+    <value>Электонная почта</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Зарегестрироваться</value>
+  </data>
+  <data name="RegUnsuc" xml:space="preserve">
+    <value>При регистрации произошли следующие ошибки:</value>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value>Произошла неизвестная ошибка. Обратитесь к администратору для решения проблемы.</value>
+  </data>
+  <data name="UserRejected" xml:space="preserve">
+    <value>Создание пользователя было отменено. Обратитесь к администратору для решения проблемы.</value>
+  </data>
+  <data name="LogInMess" xml:space="preserve">
+    <value>Вы вошли в систему как</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Профиль пользователя</value>
+  </data>
+  <data name="ProfileProjects" xml:space="preserve">
+    <value>Мои проекты</value>
+  </data>
+  <data name="ProfileSettings" xml:space="preserve">
+    <value>Настройки профиля</value>
+  </data>
+  <data name="ProfileStats" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="UserNameLength" xml:space="preserve">
+    <value>Логин должен быть минимум 3 символа</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>Имя проекта</value>
+  </data>
+  <data name="ProjectNameLength" xml:space="preserve">
+    <value>Имя проекта должно быть минимум 5 символов</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="CompileDeprecation" xml:space="preserve">
+    <value>Показывать устаревшие методы</value>
+  </data>
+  <data name="CompileDownload" xml:space="preserve">
+    <value>Скачать результат</value>
+  </data>
+  <data name="CompileEmail" xml:space="preserve">
+    <value>Послать на email</value>
+  </data>
+  <data name="CompileErrors" xml:space="preserve">
+    <value>Во время компиляции произошли ошибки, пожалуйста проверьте лог.</value>
+  </data>
+  <data name="CompileResult" xml:space="preserve">
+    <value>Скомпилировать</value>
+  </data>
+  <data name="CompileVersion" xml:space="preserve">
+    <value>Версия компилятора Java</value>
+  </data>
+  <data name="CompileWarnings" xml:space="preserve">
+    <value>Показывать предупреждения</value>
+  </data>
+  <data name="EmailMessage" xml:space="preserve">
+    <value>Если вы его не получили, то подождите пару минут или вы ввели неверный адрес или наш сайт не работает ((</value>
+  </data>
+  <data name="HomeWelcome" xml:space="preserve">
+    <value>Это система проектирования Java онлайн. Вы сможете создавать, редактировать и компилировать ваши Java проекты.</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="ProjectAddUser1" xml:space="preserve">
+    <value>Добавить пользователя</value>
+  </data>
+  <data name="ProjectAddUser2" xml:space="preserve">
+    <value>к проекту.</value>
+  </data>
+  <data name="ProjectAddUserToProject" xml:space="preserve">
+    <value>Добавить этого пользователя к моему проекту</value>
+  </data>
+  <data name="ProjectAllowed" xml:space="preserve">
+    <value>Проекты с моим участием</value>
+  </data>
+  <data name="ProjectBlockUser" xml:space="preserve">
+    <value>Заблокировать пользователя</value>
+  </data>
+  <data name="ProjectChooseYourProject" xml:space="preserve">
+    <value>Выбрать проект</value>
+  </data>
+  <data name="ProjectClosed" xml:space="preserve">
+    <value>Закрыт</value>
+  </data>
+  <data name="ProjectCompile" xml:space="preserve">
+    <value>Компиляция</value>
+  </data>
+  <data name="ProjectCreatedNumber" xml:space="preserve">
+    <value>Количество созданных проектов</value>
+  </data>
+  <data name="ProjectCreateProject" xml:space="preserve">
+    <value>Создать проект</value>
+  </data>
+  <data name="ProjectData" xml:space="preserve">
+    <value>Файлы данных</value>
+  </data>
+  <data name="ProjectExit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="ProjectFileCreatedBy" xml:space="preserve">
+    <value>Создатель</value>
+  </data>
+  <data name="ProjectFileCreatedDate" xml:space="preserve">
+    <value>Дата создания</value>
+  </data>
+  <data name="ProjectFileDelete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ProjectFileDownload" xml:space="preserve">
+    <value>Скачать</value>
+  </data>
+  <data name="ProjectFileEdit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="ProjectFileModifiedBy" xml:space="preserve">
+    <value>Изменено пользователем</value>
+  </data>
+  <data name="ProjectFileModifiedDate" xml:space="preserve">
+    <value>Дата изменений</value>
+  </data>
+  <data name="ProjectFileName" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="ProjectFilesAdded" xml:space="preserve">
+    <value>Приоединенные файлы</value>
+  </data>
+  <data name="ProjectFilesAdded1" xml:space="preserve">
+    <value>Приоединенные файлы</value>
+  </data>
+  <data name="ProjectFileUpload" xml:space="preserve">
+    <value>Загрузить новый</value>
+  </data>
+  <data name="ProjectFindProjects" xml:space="preserve">
+    <value>Найти проект</value>
+  </data>
+  <data name="ProjectFindUsers" xml:space="preserve">
+    <value>Найти пользователя</value>
+  </data>
+  <data name="ProjectGeneral" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="ProjectJoinedNumber" xml:space="preserve">
+    <value>Количество присоедененных проектов</value>
+  </data>
+  <data name="ProjectLastChanges" xml:space="preserve">
+    <value>Последние изменения</value>
+  </data>
+  <data name="ProjectLastProject" xml:space="preserve">
+    <value>Последний проект</value>
+  </data>
+  <data name="ProjectLibrary" xml:space="preserve">
+    <value>Файлы библиотек</value>
+  </data>
+  <data name="ProjectOwn" xml:space="preserve">
+    <value>Мои проекты</value>
+  </data>
+  <data name="ProjectProject" xml:space="preserve">
+    <value>Проект</value>
+  </data>
+  <data name="ProjectSource" xml:space="preserve">
+    <value>Файлы исходного кода</value>
+  </data>
+  <data name="ProjectUnblockUser" xml:space="preserve">
+    <value>Разблокировать пользователя</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Сохранить изменения</value>
+  </data>
+  <data name="ChangeEmail" xml:space="preserve">
+    <value>Изменить email</value>
+  </data>
+  <data name="ChangeEmailSuc" xml:space="preserve">
+    <value>Email успешно изменен!</value>
+  </data>
+</root>

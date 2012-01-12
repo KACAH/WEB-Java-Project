@@ -1,0 +1,19 @@
+﻿@model Web_Java_Project.Models.WJPUser
+
+@{
+    ViewBag.Title = "Add To Project";
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+<h2>@WJP_Resources.Lang.ProjectAddUser1 "@ViewBag.UserTo.UserName" @WJP_Resources.Lang.ProjectAddUser2</h2>
+<br />
+<h3>@WJP_Resources.Lang.ProjectChooseYourProject</h3>
+<div>
+    @foreach (var project in Model.MyProjects)
+    {
+        <p>
+            <a href="@Url.Action("AddToProject", "Profile",
+                new { userName = ViewBag.UserTo.UserName, projectID = project.ProjectID })">@project.Name</a>
+        </p>
+    }
+</div>

@@ -1,0 +1,24 @@
+﻿@model Web_Java_Project.Models.WJPUser
+
+<p>
+    @WJP_Resources.Lang.ProjectCreatedNumber: @Html.DisplayFor(model => model.MyProjects.Count)
+</p>
+<p>
+    @WJP_Resources.Lang.ProjectJoinedNumber: @Html.DisplayFor(model => model.AllowedProjects.Count)
+</p>
+<br />
+<h3>@WJP_Resources.Lang.ProjectFilesAdded:</h3>
+<p>
+    @WJP_Resources.Lang.ProjectSource: @Html.DisplayFor(model => model.SourcesAdded)
+    <br />
+    @WJP_Resources.Lang.ProjectLibrary: @Html.DisplayFor(model => model.LibrariesAdded)
+    <br />
+    @WJP_Resources.Lang.ProjectData: @Html.DisplayFor(model => model.DataAdded)
+    <br />
+</p>
+<br />
+<p>
+    @WJP_Resources.Lang.ProjectLastChanges: @Html.DisplayFor(model => model.LastChangesDate)
+    <br />
+    @WJP_Resources.Lang.ProjectLastProject: @Html.DisplayFor(model => model.LastProject.Name)
+</p>

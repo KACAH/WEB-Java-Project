@@ -1,0 +1,56 @@
+﻿@model Web_Java_Project.Models.Project
+
+@{
+    ViewBag.Title = "General";
+    Layout = "~/Views/Shared/_ProjectLayout.cshtml";
+}
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+
+<div>
+
+<img class="ProjectLogo" alt="@Model.Name" src="@Model.ImageURL" />
+
+<p>
+    <br />
+    @WJP_Resources.Lang.ProjectFileCreatedBy - @Html.DisplayFor(model => model.Owner.UserName)
+    <br />
+    @WJP_Resources.Lang.ProjectFileModifiedDate - @Html.DisplayFor(model => model.LastChangesDate) - @Html.DisplayFor(model => model.LastChanger.UserName)
+    <br /> <br />
+    @WJP_Resources.Lang.ProjectSource: @Html.DisplayFor(model => model.SourceFiles.Count)
+    <br />
+    @WJP_Resources.Lang.ProjectLibrary: @Html.DisplayFor(model => model.LibraryFiles.Count)
+    <br />
+    @WJP_Resources.Lang.ProjectData: @Html.DisplayFor(model => model.DataFiles.Count)
+    <br /><br />
+</p> 
+
+@if (ViewBag.Mode == "God" || ViewBag.Mode == "Owner")
+{
+    using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <br />
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ImageURL)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ImageURL)
+                @Html.ValidationMessageFor(model => model.ImageURL)
+            </div>
+
+            <div class="editor-field">
+                @Html.CheckBoxFor(model => model.Closed)
+                @Html.LabelFor(model => model.Closed)
+                @Html.ValidationMessageFor(model => model.Closed)
+            </div>
+
+            <p>
+                <input type="submit" value="@WJP_Resources.Lang.SaveChanges" />
+            </p>
+        </fieldset>
+    }
+}
+
+</div>

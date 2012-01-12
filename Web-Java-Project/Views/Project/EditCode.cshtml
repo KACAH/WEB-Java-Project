@@ -1,0 +1,57 @@
+﻿@model Web_Java_Project.Models.Project
+
+@{
+    ViewBag.Title = "Edit Code";
+    Layout = "~/Views/Shared/_ProjectLayout.cshtml";
+}
+
+<h2>@WJP_Resources.Lang.ProjectFileEdit "@ViewBag.FileName"</h2>
+<br />
+
+<script src="@Url.Content("~/Scripts/CodeMirror/lib/codemirror.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/CodeMirror/mode/clike/clike.js")" type="text/javascript"></script>
+
+<style>
+    .CodeMirror-scroll 
+    {
+        height: auto;
+        overflow-y: auto;                                                                                                                                          
+        overflow-x: scroll;
+        width: 700px
+    }
+    
+    .CodeMirror 
+    {
+        border: 2px solid black; 
+    }
+    
+    .activeline 
+    {
+        background: #f0fcff !important;
+    }          
+     
+</style>
+
+@using (Html.BeginForm())
+{
+<p>
+    <input type="submit" value="Send changes" />
+</p>
+<textarea id="code" name="code" rows = "" cols = "">
+@ViewBag.code
+</textarea> 
+}
+
+<script type="text/javascript">
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        matchBrackets: true,
+        mode: "text/x-java",
+        onCursorActivity: function () {
+            editor.setLineClass(hlLine, null);
+            hlLine = editor.setLineClass(editor.getCursor().line, "activeline"); 
+        }
+    });
+    var hlLine = editor.setLineClass(0, "activeline");
+    editor.setOption("theme", "eclipse");
+</script> 

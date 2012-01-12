@@ -1,0 +1,51 @@
+﻿@model Web_Java_Project.Models.WJPUser
+
+@{
+    ViewBag.Title = WJP_Resources.Lang.ProfileProjects;
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+<h2>@WJP_Resources.Lang.ProfileProjects</h2>
+<br />
+
+<div id="OwnProj">
+<h3>@WJP_Resources.Lang.ProjectOwn</h3>
+<br />
+
+<p>
+    @Html.ActionLink(@WJP_Resources.Lang.ProjectCreateProject, "CreateProject")
+</p>
+<br />
+
+<ul class="projects-list">
+    @foreach (var project in Model.MyProjects)
+    {
+        <li><a href="@Url.Action("General", "Project",
+            new { id = project.ProjectID })">
+
+            <img class="ProjectLogo" alt="@project.Name" src="@project.ImageURL" />
+            <span>@project.Name</span> </a>
+        </li>
+    }
+</ul>
+<br />
+
+</div>
+
+<div id="AllProj">
+<h3>@WJP_Resources.Lang.ProjectAllowed</h3>
+<br />
+
+<ul class="projects-list">
+    @foreach (var project in Model.AllowedProjects)
+    {
+        <li><a href="@Url.Action("General", "Project",
+            new { id = project.ProjectID })">
+
+            <img class="ProjectLogo" alt="@project.Name" src="@project.ImageURL" />
+            <span>@project.Name</span> </a>
+        </li>
+    }
+</ul>
+
+</div>

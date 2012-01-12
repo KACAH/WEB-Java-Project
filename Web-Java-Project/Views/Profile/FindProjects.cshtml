@@ -1,0 +1,45 @@
+﻿@model Web_Java_Project.Models.FindProjectModel
+
+@{
+    ViewBag.Title = " ";
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+<h2>@WJP_Resources.Lang.ProjectFindProjects</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProjectName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProjectName)
+            @Html.ValidationMessageFor(model => model.ProjectName)
+        </div>
+
+        <p>
+            <input type="submit" value="@WJP_Resources.Lang.ProjectFindProjects" />
+        </p>
+    </fieldset>
+}
+
+<div id="AllProj">
+
+<ul class="projects-list">
+    @foreach (var project in ViewBag.FoundList)
+    {
+        <li><a href="@Url.Action("General", "Project",
+            new { id = project.ProjectID })">
+
+            <img class="ProjectLogo" alt="@project.Name" src="@project.ImageURL" />
+            <span>@project.Name</span> </a>
+        </li>
+    }
+</ul>
+
+</div>

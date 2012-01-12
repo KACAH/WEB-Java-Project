@@ -1,0 +1,12 @@
+﻿@model Web_Java_Project.Models.WJPUser
+
+@{
+    ViewBag.Title = "Statistics";
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+<h2>@WJP_Resources.Lang.ProfileStats</h2>
+<br/>
+<div>
+    @Html.Partial("_Statistics", Model)
+</div>

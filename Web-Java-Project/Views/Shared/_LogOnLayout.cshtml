@@ -1,0 +1,62 @@
+﻿@model Web_Java_Project.Models.LogOnModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id = "logdiv">
+
+@if (!ViewBag.LoggedIn)
+{
+    @Html.ValidationSummary(true, WJP_Resources.Lang.LogOnError)
+
+    using (Html.BeginForm())
+    {
+        <div>
+            <fieldset>
+                <legend>@WJP_Resources.Lang.AccountInfo</legend>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.UserName)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.UserName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Password)
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(m => m.Password)
+                </div>
+
+                <div class="editor-label">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                </div>
+
+                <p>
+                    <input type="submit" value="@WJP_Resources.Lang.LogOn" />
+                </p>
+            </fieldset>
+        </div>
+    }
+    <br />
+        @Html.ActionLink(WJP_Resources.Lang.Register, "Register")
+    <br />
+} else
+{
+    <br />
+    <h1> @WJP_Resources.Lang.LogInMess @ViewBag.UserName </h1>
+    <br />
+    
+    @Html.ActionLink(WJP_Resources.Lang.Profile, "Projects", "Profile")
+    <br />   
+    @Html.ActionLink(WJP_Resources.Lang.LogOff, "LogOff", "Account")
+}
+
+</div>
+    
+<div id = "infodiv">
+    @RenderBody()
+</div>

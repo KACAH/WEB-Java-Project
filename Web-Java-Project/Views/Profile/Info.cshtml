@@ -1,0 +1,33 @@
+﻿@model Web_Java_Project.Models.WJPUser
+
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+<h2>@WJP_Resources.Lang.Info - @Html.DisplayFor(model => model.UserName)</h2>
+<br/>
+<div>
+    @Html.Partial("_Statistics", Model)
+</div>
+
+<div>
+    <a href="@Url.Action("AddToProjectList", "Profile", new { userName = Model.UserName })">@WJP_Resources.Lang.ProjectAddUserToProject</a>
+</div>
+
+ @if (ViewBag.Mode == "God")
+ {
+     if (Model.blocked)
+     {
+        <div>
+        <a href="@Url.Action("SetBlockUser", "Account", 
+            new { userName = Model.UserName, block = false, returnUrl = "~/Profile/Info?userName="+Model.UserName })">@WJP_Resources.Lang.ProjectUnblockUser</a>
+        </div>
+     } else
+     {
+        <div>
+        <a href="@Url.Action("SetBlockUser", "Account",
+            new { userName = Model.UserName, block = true, returnUrl = "~/Profile/Info?userName=" + Model.UserName })">@WJP_Resources.Lang.ProjectBlockUser</a>
+        </div>
+     }
+ }

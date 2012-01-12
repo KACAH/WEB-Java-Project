@@ -1,0 +1,25 @@
+﻿@model Web_Java_Project.Models.WJPUser
+
+@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+<h2>@WJP_Resources.Lang.ProfileSettings</h2>
+
+<a href="@Url.Content("~/Account/ChangePassword")">@WJP_Resources.Lang.ChangePassword</a>
+
+@using (Html.BeginForm("ChangeEmail", "Account"))
+{
+    <fieldset>
+        <legend>@WJP_Resources.Lang.ChangeEmail</legend>
+
+        <div class="editor-field">
+            <input type="text" name="email" size="100" value="@ViewBag.CurEmail" />
+        </div>
+
+        <p>
+            <input type="submit" value="@WJP_Resources.Lang.ChangeEmail" />
+        </p>
+    </fieldset>
+}

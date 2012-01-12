@@ -1,0 +1,12 @@
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\bin\Web-Java-Project.dll
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\bin\Web-Java-Project.pdb
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\bin\EntityFramework.dll
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\bin\EntityFramework.xml
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\obj\Debug\ResolveAssemblyReference.cache
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\obj\Debug\Web-Java-Project.dll
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\obj\Debug\Web-Java-Project.pdb
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\bin\WJP-Resources.dll
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\bin\WJP-Resources.pdb
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\bin\ru\WJP-Resources.resources.dll
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\bin\lv\WJP-Resources.resources.dll
+D:\Programing\MyPrograms\HTML\WEB-Java-Project\Web-Java-Project\bin\System.Web.Providers.dll

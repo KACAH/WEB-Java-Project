@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/Error.cshtml";
+}
+<div >
+    <br />
+    @ViewBag.Message
+    <br />
+</div>
+
+<div>
+    <a href="@Url.Content("~/Profile/Projects")">Return</a>
+</div>

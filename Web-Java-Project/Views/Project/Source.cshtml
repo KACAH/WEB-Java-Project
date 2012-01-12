@@ -1,0 +1,71 @@
+﻿@model Web_Java_Project.Models.Project
+
+@{
+    ViewBag.Title = "Files";
+    Layout = "~/Views/Shared/_ProjectLayout.cshtml";
+}
+
+<h2>@WJP_Resources.Lang.ProjectSource</h2>
+<br />
+
+@using (Html.BeginForm("Source", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file"/>
+    <input type="submit" value="Upload new" />
+}
+@if (ViewBag.FileTypeError != null)
+{
+    @ViewBag.FileTypeError
+}
+<br /><br />
+
+<table class = "FileTable">
+    <tr>
+        <th>
+            @WJP_Resources.Lang.ProjectFileName
+        </th>
+        <th>
+            @WJP_Resources.Lang.ProjectFileModifiedDate
+        </th>
+        <th>
+            @WJP_Resources.Lang.ProjectFileModifiedBy
+        </th>
+        <th>
+            @WJP_Resources.Lang.ProjectFileCreatedDate
+        </th>
+        <th>
+            @WJP_Resources.Lang.ProjectFileCreatedBy
+        </th>
+    </tr>
+
+@foreach (var sFile in Model.SourceFiles) 
+{
+    <tr class="fileTable">
+        <td>
+            @Html.DisplayFor(modelItem => sFile.FileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => sFile.LastModifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => sFile.Modifier.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => sFile.AddedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => sFile.Adder.UserName)
+        </td>
+        <td>
+            @Html.ActionLink(WJP_Resources.Lang.ProjectFileDelete, "DeleteSource", new { ID = Model.ProjectID, fileID = sFile.FileID })
+        </td>
+        <td>
+            @Html.ActionLink(WJP_Resources.Lang.ProjectFileDownload, "Download", new { ID = Model.ProjectID, fileName = "/Source/" + sFile.FileName })
+        </td>
+        <td>
+            @Html.ActionLink(WJP_Resources.Lang.ProjectFileEdit, "EditCode", new { ID = Model.ProjectID, fileName = sFile.FileName })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id = "leftdiv">
+    <ul id="navlist">
+        <li><a href="@Url.Content("~/Profile/Projects")">@WJP_Resources.Lang.ProfileProjects</a></li>
+        <li><a href="@Url.Content("~/Profile/Settings")">@WJP_Resources.Lang.ProfileSettings</a></li>
+        <li><a href="@Url.Content("~/Profile/Statistics")">@WJP_Resources.Lang.ProfileStats</a></li>
+        <li><a href="@Url.Content("~/Profile/FindUsers")">@WJP_Resources.Lang.ProjectFindUsers</a></li>
+        @if (ViewBag.Mode == "God")
+        {
+            <li><a href="@Url.Content("~/Profile/FindProjects")">@WJP_Resources.Lang.ProjectFindProjects</a></li>
+        }
+        <li><a href="@Url.Content("~/Account/LogOff")">@WJP_Resources.Lang.LogOff</a></li>
+    </ul>        
+</div> 
+
+<div id = "infodiv">
+    @RenderBody()
+</div>
