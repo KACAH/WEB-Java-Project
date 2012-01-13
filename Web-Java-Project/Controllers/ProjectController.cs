@@ -79,6 +79,7 @@ namespace Web_Java_Project.Controllers
             profileDB.Entry(curUser).State = EntityState.Modified;
             profileDB.Entry(proj).State = EntityState.Modified;
             profileDB.SaveChanges();
+            printLog("Project '" + project.Name + "' settings were changed by user '" + curUser.UserName + "'");
 
             return View(proj);
         }
@@ -214,6 +215,8 @@ namespace Web_Java_Project.Controllers
                 return RedirectToAction("Error", "Home", new { message = "Project is closed by owner or Administrator!" });
 
             addFile(proj, curUser, file, "Source");
+            printLog("Source file '" + file.FileName + 
+                    "' added into project '" + proj.Name + "' by user '" + curUser.UserName + "'");
             return View(proj);
         }
 
@@ -250,6 +253,8 @@ namespace Web_Java_Project.Controllers
             System.IO.File.Delete(Server.MapPath("~/Projects/") + proj.ProjectID + "/Source/" + file.FileName);
             profileDB.SourceFiles.Remove(file);
             profileDB.SaveChanges();
+            printLog("Source file '" + file.FileName +
+                    "' deleted from project '" + proj.Name + "' by user '" + curUser.UserName + "'");
 
             return RedirectToAction("Source", new { ID = ID });
         }
@@ -292,6 +297,8 @@ namespace Web_Java_Project.Controllers
                 return RedirectToAction("Error", "Home", new { message = "Project is closed by owner or Administrator!" });
 
             addFile(proj, curUser, file, "Library");
+            printLog("Library file '" + file.FileName +
+                    "' added into project '" + proj.Name + "' by user '" + curUser.UserName + "'");
             return View(proj);
         }
 
@@ -328,6 +335,8 @@ namespace Web_Java_Project.Controllers
             System.IO.File.Delete(Server.MapPath("~/Projects/") + proj.ProjectID + "/Library/" + file.FileName);
             profileDB.LibraryFiles.Remove(file);
             profileDB.SaveChanges();
+            printLog("Library file '" + file.FileName +
+                    "' deleted from project '" + proj.Name + "' by user '" + curUser.UserName + "'");
 
             return RedirectToAction("Library", new { ID = ID });
         }
@@ -370,6 +379,8 @@ namespace Web_Java_Project.Controllers
                 return RedirectToAction("Error", "Home", new { message = "Project is closed by owner or Administrator!" });
 
             addFile(proj, curUser, file, "Data");
+            printLog("Data file '" + file.FileName +
+                    "' added into project '" + proj.Name + "' by user '" + curUser.UserName + "'");
             return View(proj);
         }
 
@@ -406,6 +417,8 @@ namespace Web_Java_Project.Controllers
             System.IO.File.Delete(Server.MapPath("~/Projects/") + proj.ProjectID + "/Data/" + file.FileName);
             profileDB.DataFiles.Remove(file);
             profileDB.SaveChanges();
+            printLog("Data file '" + file.FileName +
+                    "' deleted from project '" + proj.Name + "' by user '" + curUser.UserName + "'");
 
             return RedirectToAction("Data", new { ID = ID });
         }
@@ -498,6 +511,8 @@ namespace Web_Java_Project.Controllers
             profileDB.Entry(curUser).State = EntityState.Modified;
             profileDB.Entry(proj).State = EntityState.Modified;
             profileDB.SaveChanges();
+            printLog("Source file '" + file.FileName +
+                    "' editted in project '" + proj.Name + "' by user '" + curUser.UserName + "'");
 
             return View(proj);
         }
@@ -631,6 +646,7 @@ namespace Web_Java_Project.Controllers
 
             ViewBag.DefEmail = Membership.GetUser().Email;
 
+            printLog("Project '" + proj.Name + "' compiled by user '" + curUser.UserName + "'");
             return View(proj);
         }
 
@@ -664,6 +680,7 @@ namespace Web_Java_Project.Controllers
             System.Net.Mail.SmtpClient  s = new System.Net.Mail.SmtpClient();
             s.Timeout = 5000;
             s.SendAsync(message, proj);
+            printLog("Email send to address '" + email + "' by user '" + curUser.UserName + "'");
 
             return View(proj);
         }

@@ -40,6 +40,8 @@ namespace Web_Java_Project
             RegisterRoutes(RouteTable.Routes);
 
             Database.SetInitializer<ProfileDBContext>(new DatabaseInitializer());
+
+            Web_Java_Project.Controllers.BaseController.printLog("Starting WEB-JAVA-PROJECT system");
         }
     }
 }

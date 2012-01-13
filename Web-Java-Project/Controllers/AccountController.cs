@@ -19,6 +19,7 @@ namespace Web_Java_Project.Controllers
             if (Membership.ValidateUser(model.UserName, model.Password) && !profileDB.Users.Find(model.UserName).blocked)
             {
                 FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                printLog("User '" + model.UserName + "' logged in");
                 return true;
             }
 
@@ -60,6 +61,7 @@ namespace Web_Java_Project.Controllers
             }
 
             // If we got this far, something failed, redisplay form
+            printLog("User '" + model.UserName + "' login fail");
             return View(model);
         }
 
@@ -69,8 +71,8 @@ namespace Web_Java_Project.Controllers
 
         public ActionResult LogOff()
         {
+            printLog("User '" + Membership.GetUser().UserName + "' logged out");
             FormsAuthentication.SignOut();
-
             return RedirectToAction("Index", "Home");
         }
 
@@ -101,6 +103,7 @@ namespace Web_Java_Project.Controllers
                     newUser.UserName = model.UserName;
                     profileDB.Users.Add(newUser);
                     profileDB.SaveChanges();
+                    printLog("User '" + model.UserName + "' registred");
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -146,6 +149,7 @@ namespace Web_Java_Project.Controllers
 
                 if (changePasswordSucceeded)
                 {
+                    printLog("User '" + Membership.GetUser().UserName + "' changed his password");
                     return RedirectToAction("ChangePasswordSuccess");
                 }
                 else
@@ -163,6 +167,7 @@ namespace Web_Java_Project.Controllers
         {
             MembershipUser currentUser = Membership.GetUser(User.Identity.Name, true);
             currentUser.Email = email;
+            printLog("User '" + Membership.GetUser().UserName + "' changed his email");
             Membership.UpdateUser(currentUser);
 
             return View();
@@ -186,6 +191,7 @@ namespace Web_Java_Project.Controllers
 
             curUser.blocked = block;
             profileDB.SaveChanges();
+            printLog("User '" + Membership.GetUser().UserName + "' bloked");
 
             if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))

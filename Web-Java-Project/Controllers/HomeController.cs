@@ -41,6 +41,7 @@ namespace Web_Java_Project.Controllers
 
         public ActionResult Error(string message)
         {
+            printLog("ERROR! " + message);
             ViewBag.Message = message;
             return View();
         }

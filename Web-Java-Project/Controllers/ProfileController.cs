@@ -88,6 +88,7 @@ namespace Web_Java_Project.Controllers
                 Directory.CreateDirectory(Server.MapPath("~/Projects/") + project.ProjectID + "/Library");
                 Directory.CreateDirectory(Server.MapPath("~/Projects/") + project.ProjectID + "/Data");
                 Directory.CreateDirectory(Server.MapPath("~/Projects/") + project.ProjectID + "/Classes");
+                printLog("New project '" + project.Name + "' created by user '" + curUser.UserName + "'");
                 return RedirectToAction("Projects");
             }
 
@@ -213,6 +214,7 @@ namespace Web_Java_Project.Controllers
                 userTo.AllowedProjects.Add(proj);
                 proj.AllowedUsers.Add(userTo);
                 profileDB.SaveChanges();
+                printLog("User '" + userTo.UserName + "' added to project '" + proj.Name + "'");
             }
 
             return RedirectToAction("Projects");
